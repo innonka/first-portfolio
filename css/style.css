@@ -25,8 +25,8 @@ a:active {
   color: #eeeeee;
   margin-inline: 50px;
   padding: 10px;
-  border: 2px solid lightcyan;
-  border-radius: 10px;
+  background-color: lightgrey;
+  border-radius: 20px;
 }
 
 body {
@@ -41,6 +41,7 @@ body {
   line-height: 1.5;
 }
 
+/*background image added in css*/
 body::after {
   content: "";
   background-image: url("../images/main-background.jpg");
@@ -55,13 +56,14 @@ body::after {
 }
 
 .profile {
-  border: 1px solid #ddd;
+  border: 1px solid lightgrey;
   border-radius: 50px;
   padding: 5px;
   width: 120px;
   height: auto;
   float: left;
   margin-right: 30px;
+  opacity: 0.9;
 }
 .header h1 {
   display: grid;
@@ -73,11 +75,8 @@ h1 .rothmann {
   color: blueviolet;
 }
 
-h1 h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+h2 {
+  margin: 0px;
 }
 
 p {
