@@ -18,6 +18,14 @@ a:active {
   color: blueviolet;
 }
 
+p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
 .main-menu .link {
   display: inline;
   width: 150px;
@@ -29,7 +37,7 @@ a:active {
   border-radius: 20px;
 }
 
-body {
+#main-content {
   width: 100%;
   max-width: 1000px;
   margin: auto;
@@ -42,11 +50,11 @@ body {
 }
 
 /*background image added in css*/
-body::after {
+#main-content::after {
   content: "";
   background-image: url("../images/main-background.jpg");
   background-size: cover;
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -75,18 +83,65 @@ h1 .rothmann {
   color: blueviolet;
 }
 
-h2 {
-  margin: 0px;
-}
-
-p {
-  margin: 0;
-}
-
 section {
-  padding: 10px;
+  display: grid;
+  grid-template-columns: 33% 67%;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "heading content"
+    "col-1 col-2";
+  gap: 40px;
+  justify-content: center;
+  padding: 10px 50px;
+}
+
+section h2 {
+  min-width: 250px;
+}
+.section-content {
+  white-space: nowrap;
+  font-size: 1.1rem;
+  line-height: 2.2em;
 }
 
 .content {
-  max-width: 400px;
+  max-width: 800px;
+}
+
+.portfolio-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "col1 col2"
+    "pr1 pr2"
+    "pr3 pr4";
+  gap: 10px;
+}
+
+.portfolio-content img {
+  width: auto;
+  height: auto;
+}
+
+/* For small screens */
+@media (max-width: 800px) {
+  section {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "content"
+      "col-1";
+    padding: 5px 5px;
+  }
+
+  .section-content {
+    white-space: normal;
+  }
+
+  .portfolio-content {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "col1"
+      "img1";
+  }
 }
