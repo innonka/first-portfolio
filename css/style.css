@@ -123,6 +123,12 @@ section h2 {
   height: auto;
 }
 
+.portfolio-content img:hover {
+  transition: 0.5s ease;
+  opacity: 0.5;
+  box-shadow: 5px 5px blueviolet;
+}
+
 /* For small screens */
 @media (max-width: 800px) {
   section {
